@@ -1,0 +1,17 @@
+# Versions the existing notebook outputs were produced with (Python 3.13.1).
+numpy==2.2.2
+pandas==3.0.5
+xarray==2026.7.0
+netCDF4==1.7.4
+scipy==1.18.0
+pymannkendall==1.4.3
+scikit-learn==1.9.0
+matplotlib==3.10.0
+seaborn==0.13.2
+jupyter==1.1.1
+nbconvert==7.17.1
+ipykernel==7.3.0
+# report building (scripts/build_report.py, scripts/check_references.py)
+python-docx==1.2.0
+openpyxl==3.1.5
+pillow

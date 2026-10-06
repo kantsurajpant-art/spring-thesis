@@ -1,0 +1,94 @@
+{
+  "era5": {
+    "lat_res": 0.10000000000000142,
+    "first_month": "1950-01-01",
+    "last_month": "2026-04-01",
+    "n_months": 916,
+    "variables": [
+      "d2m",
+      "t2m",
+      "pev",
+      "tp"
+    ],
+    "lat_min": 0.0,
+    "lat_max": 40.0,
+    "lon_min": 60.0,
+    "lon_max": 100.0
+  },
+  "window": "2009-2023",
+  "version_a_valid_rows": 3278,
+  "version_a_missing_year": 4,
+  "version_a_too_early": 5,
+  "n_cells": 12,
+  "version_b_distinct_vectors": 12,
+  "version_a_distinct_vectors": 136,
+  "warming_1950s_to_2010s": 0.3680802239312122,
+  "medians_version_a": {
+    "Dewpoint_rate": {
+      "active": 0.023159450954859533,
+      "dried": 0.004708353678392996
+    },
+    "Temperature_rate": {
+      "active": -0.0028194851345422953,
+      "dried": 0.01898408547426173
+    },
+    "Precipitation_rate": {
+      "active": 25.30423207796656,
+      "dried": 0.9071680566798932
+    },
+    "Evaporation_rate": {
+      "active": -19.252090714871883,
+      "dried": 1.6151211672911105
+    },
+    "Dewpoint_mean": {
+      "active": 11.91949479844837,
+      "dried": 12.244780307345954
+    },
+    "Temperature_mean": {
+      "active": 16.51975691053605,
+      "dried": 16.9709420098199
+    },
+    "Precipitation_mean": {
+      "active": 2548.3870419815908,
+      "dried": 2467.022927052615
+    },
+    "Evaporation_mean": {
+      "active": 1464.742633410626,
+      "dried": 1533.6493415137131
+    }
+  },
+  "medians_version_b": {
+    "Dewpoint_rate": {
+      "active": 0.023159450954859533,
+      "dried": 0.018452962239583332
+    },
+    "Temperature_rate": {
+      "active": -0.0028194851345422953,
+      "dried": -0.0016457239786831224
+    },
+    "Precipitation_rate": {
+      "active": 25.30423207796656,
+      "dried": 25.195524236146866
+    },
+    "Evaporation_rate": {
+      "active": -19.252090714871883,
+      "dried": -19.25790734175189
+    },
+    "Dewpoint_mean": {
+      "active": 11.91949479844837,
+      "dried": 12.668615892198378
+    },
+    "Temperature_mean": {
+      "active": 16.51975691053605,
+      "dried": 17.32725474039716
+    },
+    "Precipitation_mean": {
+      "active": 2548.3870419815908,
+      "dried": 2536.3570496819093
+    },
+    "Evaporation_mean": {
+      "active": 1464.742633410626,
+      "dried": 1496.832918582691
+    }
+  }
+}

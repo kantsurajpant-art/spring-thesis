@@ -1,0 +1,105 @@
+{
+  "name": "model3_version_a",
+  "title": "Model 3 with Version A window",
+  "n_rows": 3278,
+  "n_dried": 718,
+  "n_features_in": 9,
+  "features_in": [
+    "Dewpoint_rate",
+    "Temperature_rate",
+    "Precipitation_rate",
+    "Evaporation_rate",
+    "Dewpoint_mean",
+    "Temperature_mean",
+    "Precipitation_mean",
+    "Evaporation_mean",
+    "Perennial / Seasonal"
+  ],
+  "features_used": [
+    "Dewpoint_rate",
+    "Temperature_rate",
+    "Precipitation_rate",
+    "Evaporation_rate",
+    "Temperature_mean",
+    "Precipitation_mean",
+    "Evaporation_mean",
+    "Perennial / Seasonal"
+  ],
+  "n_train": 2294,
+  "n_test": 984,
+  "n_test_dried": 216,
+  "test": {
+    "accuracy": 0.9827235772357723,
+    "precision": 0.9383259911894273,
+    "recall": 0.9861111111111112,
+    "f1": 0.9616252821670429,
+    "roc_auc": 0.9981523678626544
+  },
+  "confusion": {
+    "tn": 754,
+    "fp": 14,
+    "fn": 3,
+    "tp": 213
+  },
+  "cv": {
+    "f1_mean": 0.9744180519957837,
+    "f1_sd": 0.01364612378763214,
+    "auc_mean": 0.9922049237112714,
+    "auc_sd": 0.0038061898002130566,
+    "f1_folds": [
+      0.9825783972125436,
+      0.9787234042553191,
+      0.9556313993174061,
+      0.9621993127147767,
+      0.9929577464788732
+    ]
+  },
+  "importance_impurity": {
+    "Evaporation_rate": 0.4131200505613336,
+    "Temperature_rate": 0.2288685256031476,
+    "Dewpoint_rate": 0.12815619345720217,
+    "Precipitation_rate": 0.07233682005805173,
+    "Precipitation_mean": 0.07221214883835429,
+    "Evaporation_mean": 0.03734977030915873,
+    "Perennial / Seasonal": 0.02517073264990468,
+    "Temperature_mean": 0.022785758522847224
+  },
+  "importance_permutation": {
+    "Evaporation_rate": 0.17268850067515437,
+    "Dewpoint_rate": 0.004084080825617375,
+    "Precipitation_mean": 0.0038248697916667294,
+    "Perennial / Seasonal": 0.003482470100308721,
+    "Temperature_rate": 0.0033305603780864556,
+    "Precipitation_rate": 0.003317901234567966,
+    "Temperature_mean": 0.0031349464699074623,
+    "Evaporation_mean": 0.00234887393904325
+  },
+  "n_distinct_feature_rows": 204,
+  "vif": {
+    "initial": {
+      "Dewpoint_mean": 50.188259742260435,
+      "Temperature_mean": 50.1178931882179,
+      "Precipitation_rate": 4.957298932670256,
+      "Evaporation_rate": 4.196567767901943,
+      "Temperature_rate": 3.074761964732028,
+      "Precipitation_mean": 2.9242660210533002,
+      "Dewpoint_rate": 2.4531452737402724,
+      "Evaporation_mean": 1.317313750393827
+    },
+    "dropped": [
+      [
+        "Dewpoint_mean",
+        50.19
+      ]
+    ],
+    "final": {
+      "Precipitation_rate": 4.105681861712121,
+      "Evaporation_rate": 3.8767818017499653,
+      "Temperature_rate": 2.7564845096469353,
+      "Precipitation_mean": 2.7344600105140557,
+      "Temperature_mean": 2.23898014017197,
+      "Dewpoint_rate": 2.0115226829864548,
+      "Evaporation_mean": 1.3115718770351763
+    }
+  }
+}

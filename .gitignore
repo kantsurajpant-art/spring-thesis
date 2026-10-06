@@ -1,0 +1,134 @@
+# =====================================================================
+# 1. PRIVATE / LARGE INPUT DATA - never commit (see data/README.md)
+# =====================================================================
+data/*
+!data/README.md
+
+# Raw inputs, wherever they end up
+Full_Analysis_data*.csv
+Overall assessment*.csv
+*SS mapping*.csv
+results/tables/Full_Analysis_data_recomputed.csv
+
+# Climate / raster / array data
+*.nc
+*.nc4
+*.grib
+*.grib2
+*.grb
+*.h5
+*.hdf5
+*.zarr/
+*.tif
+*.tiff
+*.npy
+*.npz
+
+# GIS layers (spring coordinates, boundaries)
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.gpkg
+*.kml
+*.kmz
+*.geojson
+
+# Spreadsheets / tabular dumps (survey exports)
+*.xlsx
+*.xls
+*.xlsm
+*.parquet
+*.feather
+*.sav
+*.dta
+
+# Archives (usually data bundles)
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Per-spring climate features - regenerable from notebook 01, one row per spring
+results/tables/climate_features_*.csv
+
+# =====================================================================
+# 2. SECRETS / CREDENTIALS
+# =====================================================================
+.env
+.env.*
+*.env
+.github_token
+*token*.txt
+*.pem
+*.key
+*.p12
+credentials*.json
+secrets*.json
+.cdsapirc
+
+# =====================================================================
+# 3. SUPERSEDED / ARCHIVED WORK (old notebooks are in git history: abd3531)
+# =====================================================================
+**/archive/
+
+# =====================================================================
+# 4. THESIS DRAFTS / OFFICE DOCUMENTS (kept on OneDrive, not in the repo)
+# =====================================================================
+*.docx
+*.doc
+*.pptx
+*.pdf
+report/build/
+report/output/
+
+# =====================================================================
+# 5. GENERATED / USELESS FILES
+# =====================================================================
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Saved models / caches
+*.pkl
+*.pickle
+*.joblib
+catboost_info/
+mlruns/
+
+# Logs
+*.log
+results/logs/
+
+# Office / OneDrive / OS artefacts
+~$*
+.~lock.*
+*.tmp
+*.bak
+*~
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Editors / tools
+.vscode/
+.idea/
+.claude/

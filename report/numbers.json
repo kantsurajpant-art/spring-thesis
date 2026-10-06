@@ -1,0 +1,1360 @@
+{
+  "facts": {
+    "n_springs": 3287,
+    "n_dried": 727,
+    "n_active": 2560,
+    "pct_dried": 22.11743230909644,
+    "n_perennial": 2784,
+    "n_seasonal": 503,
+    "pct_perennial": 84.69729236385763,
+    "pct_dried_perennial": 15.517241379310345,
+    "pct_dried_seasonal": 58.64811133200796,
+    "drying_year": {
+      "n_with_year": 723,
+      "n_missing": 4,
+      "min": 1943,
+      "max": 2023,
+      "median": 2015.0,
+      "n_2015": 241,
+      "pct_2015": 33.14993122420908,
+      "first_complete_window_end": 1964,
+      "n_before_first_complete": 5,
+      "n_since_2000": 653
+    },
+    "raw": {
+      "n_records": 5692,
+      "n_springs": 5170,
+      "n_ponds": 522,
+      "springs_by_municipality": {
+        "Dhulikhel": 1064,
+        "Roshi RM": 924,
+        "Panauti": 854,
+        "Panchkhal": 838,
+        "Temal": 665,
+        "Namobuudha": 448,
+        "Bethanchownk": 377
+      }
+    },
+    "survey_dates": {
+      "n_records_with_date": 5022,
+      "n_parsed_2023_2024": 4849,
+      "pct_2024": 86.03835842441741,
+      "p05": "2023-12-18",
+      "median": "2024-02-08",
+      "p95": "2024-04-18"
+    },
+    "bs_to_ad_offset": {
+      "57": 721,
+      "53": 1,
+      "49": 1
+    },
+    "drying_cause": {
+      "earthquake": 229,
+      "drought": 226,
+      "infrastructure": 105,
+      "neglect_or_disruption": 95,
+      "natural_disaster": 64,
+      "land_use": 5,
+      "unknown": 3
+    },
+    "earthquake_dried_in_2015": 195,
+    "n_dried_2015_by_cause": {
+      "earthquake": 195,
+      "drought": 23,
+      "infrastructure": 13,
+      "natural_disaster": 6,
+      "neglect_or_disruption": 4
+    },
+    "drought_drying_year_median": 2011.0,
+    "quality": {
+      "duplicate_coordinates": 51,
+      "identical_rows": 36,
+      "slope_sin_min": 0.9999989,
+      "slope_sin_max": 1.0,
+      "slope_cos_max": 0.001446203,
+      "n_missing_formation": 26
+    },
+    "grid": {
+      "n_cells": 12,
+      "springs_per_cell_min": 1,
+      "springs_per_cell_max": 1065,
+      "dried_pct_per_cell_min": 0.0,
+      "dried_pct_per_cell_max": 44.14414414414414,
+      "cells_all_active": 2
+    },
+    "elevation": {
+      "median": 1533.0,
+      "min": 592.0,
+      "max": 2753.0,
+      "n_1400_1700": 1820,
+      "dried_pct_by_band": {
+        "<1000": 33.587786259541986,
+        "1000-1400": 30.619469026548675,
+        "1400-1700": 22.032967032967033,
+        "1700-2000": 13.418530351437699,
+        ">2000": 17.24137931034483
+      },
+      "springs_by_band": {
+        "<1000": 131,
+        "1000-1400": 565,
+        "1400-1700": 1820,
+        "1700-2000": 626,
+        ">2000": 145
+      }
+    },
+    "aspect": {
+      "counts": {
+        "N": {
+          "active": 390,
+          "dried": 103
+        },
+        "NE": {
+          "active": 386,
+          "dried": 64
+        },
+        "E": {
+          "active": 474,
+          "dried": 76
+        },
+        "SE": {
+          "active": 341,
+          "dried": 96
+        },
+        "S": {
+          "active": 192,
+          "dried": 81
+        },
+        "SW": {
+          "active": 194,
+          "dried": 91
+        },
+        "W": {
+          "active": 244,
+          "dried": 102
+        },
+        "NW": {
+          "active": 339,
+          "dried": 114
+        }
+      },
+      "dried_pct": {
+        "N": 20.89,
+        "NE": 14.22,
+        "E": 13.82,
+        "SE": 21.97,
+        "S": 29.67,
+        "SW": 31.93,
+        "W": 29.48,
+        "NW": 25.17
+      }
+    },
+    "roads": {
+      "mean_by_direction": {
+        "active": {
+          "Road-N": 0.2285,
+          "Road-NE": 0.2117,
+          "Road-E": 0.2344,
+          "Road-SE": 0.2176,
+          "Road-S": 0.2133,
+          "Road-SW": 0.1754,
+          "Road-W": 0.2023,
+          "Road-NW": 0.1766
+        },
+        "dried": {
+          "Road-N": 0.2201,
+          "Road-NE": 0.2627,
+          "Road-E": 0.282,
+          "Road-SE": 0.2613,
+          "Road-S": 0.2613,
+          "Road-SW": 0.2393,
+          "Road-W": 0.2063,
+          "Road-NW": 0.1926
+        }
+      },
+      "directions_dried_higher": [
+        "Road-NE",
+        "Road-E",
+        "Road-SE",
+        "Road-S",
+        "Road-SW",
+        "Road-W",
+        "Road-NW"
+      ],
+      "mean_total_active": 1.659765625,
+      "mean_total_dried": 1.9257221458046767
+    },
+    "outside": {
+      "n_springs": 2056,
+      "pct_in_new_cells": 21.69260700389105,
+      "by_municipality": {
+        "Bethanchownk": {
+          "springs": 65,
+          "cells": 2,
+          "pct_in_new_cells": 0.0,
+          "pct_dried": 10.8
+        },
+        "Dhulikhel": {
+          "springs": 596,
+          "cells": 5,
+          "pct_in_new_cells": 22.1,
+          "pct_dried": 20.6
+        },
+        "Namobuudha": {
+          "springs": 55,
+          "cells": 3,
+          "pct_in_new_cells": 0.0,
+          "pct_dried": 9.1
+        },
+        "Panauti": {
+          "springs": 2,
+          "cells": 1,
+          "pct_in_new_cells": 0.0,
+          "pct_dried": 100.0
+        },
+        "Panchkhal": {
+          "springs": 837,
+          "cells": 4,
+          "pct_in_new_cells": 37.3,
+          "pct_dried": 38.9
+        },
+        "Roshi RM": {
+          "springs": 4,
+          "cells": 2,
+          "pct_in_new_cells": 25.0,
+          "pct_dried": 75.0
+        },
+        "Temal": {
+          "springs": 497,
+          "cells": 5,
+          "pct_in_new_cells": 0.2,
+          "pct_dried": 32.6
+        }
+      }
+    },
+    "augmentation": {
+      "rows_per_active": 9,
+      "rows_active": 23040,
+      "rows_dried": 8795,
+      "pct_dried_after": 27.626825820637663,
+      "dried_rows_before_2015": 3021,
+      "pct_dried_rows_before_2015": 34.34906196702672
+    }
+  },
+  "climate": {
+    "era5": {
+      "lat_res": 0.10000000000000142,
+      "first_month": "1950-01-01",
+      "last_month": "2026-04-01",
+      "n_months": 916,
+      "variables": [
+        "d2m",
+        "t2m",
+        "pev",
+        "tp"
+      ],
+      "lat_min": 0.0,
+      "lat_max": 40.0,
+      "lon_min": 60.0,
+      "lon_max": 100.0
+    },
+    "window": "2009-2023",
+    "version_a_valid_rows": 3278,
+    "version_a_missing_year": 4,
+    "version_a_too_early": 5,
+    "n_cells": 12,
+    "version_b_distinct_vectors": 12,
+    "version_a_distinct_vectors": 136,
+    "warming_1950s_to_2010s": 0.3680802239312122,
+    "medians_version_a": {
+      "Dewpoint_rate": {
+        "active": 0.023159450954859533,
+        "dried": 0.004708353678392996
+      },
+      "Temperature_rate": {
+        "active": -0.0028194851345422953,
+        "dried": 0.01898408547426173
+      },
+      "Precipitation_rate": {
+        "active": 25.30423207796656,
+        "dried": 0.9071680566798932
+      },
+      "Evaporation_rate": {
+        "active": -19.252090714871883,
+        "dried": 1.6151211672911105
+      },
+      "Dewpoint_mean": {
+        "active": 11.91949479844837,
+        "dried": 12.244780307345954
+      },
+      "Temperature_mean": {
+        "active": 16.51975691053605,
+        "dried": 16.9709420098199
+      },
+      "Precipitation_mean": {
+        "active": 2548.3870419815908,
+        "dried": 2467.022927052615
+      },
+      "Evaporation_mean": {
+        "active": 1464.742633410626,
+        "dried": 1533.6493415137131
+      }
+    },
+    "medians_version_b": {
+      "Dewpoint_rate": {
+        "active": 0.023159450954859533,
+        "dried": 0.018452962239583332
+      },
+      "Temperature_rate": {
+        "active": -0.0028194851345422953,
+        "dried": -0.0016457239786831224
+      },
+      "Precipitation_rate": {
+        "active": 25.30423207796656,
+        "dried": 25.195524236146866
+      },
+      "Evaporation_rate": {
+        "active": -19.252090714871883,
+        "dried": -19.25790734175189
+      },
+      "Dewpoint_mean": {
+        "active": 11.91949479844837,
+        "dried": 12.668615892198378
+      },
+      "Temperature_mean": {
+        "active": 16.51975691053605,
+        "dried": 17.32725474039716
+      },
+      "Precipitation_mean": {
+        "active": 2548.3870419815908,
+        "dried": 2536.3570496819093
+      },
+      "Evaporation_mean": {
+        "active": 1464.742633410626,
+        "dried": 1496.832918582691
+      }
+    }
+  },
+  "checks": {
+    "lookup_table_auc": 0.7482671406926664,
+    "test_rows_seen_in_train_pct": 99.89868287740629,
+    "n_distinct_rows": 23,
+    "cv_f1_unshuffled_mean": 0.35975314993108354,
+    "cv_f1_unshuffled_sd": 0.1059139207705481,
+    "cv_f1_unshuffled_folds": [
+      0.3295194508009153,
+      0.43333333333333335,
+      0.45473684210526316,
+      0.16574585635359115,
+      0.41543026706231456
+    ],
+    "dried_pct_by_file_fifth": [
+      20.66869300911854,
+      19.45288753799392,
+      20.395738203957382,
+      11.415525114155251,
+      38.660578386605785
+    ],
+    "leakage_diagnostic": {
+      "accuracy": 0.9939086294416244,
+      "precision": 1.0,
+      "recall": 0.9723502304147466,
+      "f1": 0.985981308411215,
+      "roc_auc": 0.9861751152073732
+    },
+    "n_dried_ending_in_survey_year": 20
+  },
+  "m1": {
+    "name": "model1_exploratory",
+    "title": "Model 1 (exploratory, Version A)",
+    "n_rows": 3278,
+    "n_dried": 718,
+    "n_features_in": 29,
+    "features_in": [
+      "Perennial / Seasonal",
+      "Elev",
+      "Aspect",
+      "Road-N",
+      "Road-NE",
+      "Road-E",
+      "Road-SE",
+      "Road-S",
+      "Road-SW",
+      "Road-W",
+      "Road-NW",
+      "Aspect-N",
+      "Aspect-NE",
+      "Aspect-E",
+      "Aspect-SE",
+      "Aspect-S",
+      "Aspect-SW",
+      "Aspect-W",
+      "Aspect-NW",
+      "Slope_sin",
+      "Slope_cos",
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean"
+    ],
+    "features_used": [
+      "Perennial / Seasonal",
+      "Elev",
+      "Aspect",
+      "Road-N",
+      "Road-NE",
+      "Road-E",
+      "Road-SE",
+      "Road-S",
+      "Road-SW",
+      "Road-W",
+      "Road-NW",
+      "Aspect-N",
+      "Aspect-NE",
+      "Aspect-E",
+      "Aspect-SE",
+      "Aspect-S",
+      "Aspect-SW",
+      "Aspect-W",
+      "Aspect-NW",
+      "Slope_sin",
+      "Slope_cos",
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean"
+    ],
+    "n_train": 2294,
+    "n_test": 984,
+    "n_test_dried": 216,
+    "test": {
+      "accuracy": 0.9939024390243902,
+      "precision": 0.9861111111111112,
+      "recall": 0.9861111111111112,
+      "f1": 0.9861111111111112,
+      "roc_auc": 0.9946620611496914
+    },
+    "confusion": {
+      "tn": 765,
+      "fp": 3,
+      "fn": 3,
+      "tp": 213
+    },
+    "cv": {
+      "f1_mean": 0.9846001972009312,
+      "f1_sd": 0.006074286971243171,
+      "auc_mean": 0.9943076441245384,
+      "auc_sd": 0.003295032500591969,
+      "f1_folds": [
+        0.993006993006993,
+        0.9823321554770318,
+        0.9825783972125436,
+        0.975609756097561,
+        0.9894736842105263
+      ]
+    },
+    "importance_impurity": {
+      "Evaporation_rate": 0.37006304732024825,
+      "Temperature_rate": 0.1913796493411091,
+      "Dewpoint_rate": 0.10454551237646899,
+      "Precipitation_mean": 0.07316407028005699,
+      "Precipitation_rate": 0.07095353851901674,
+      "Evaporation_mean": 0.049014557345946,
+      "Dewpoint_mean": 0.03301703217330156,
+      "Perennial / Seasonal": 0.027645485242716292,
+      "Temperature_mean": 0.025412110169670536,
+      "Elev": 0.014254001138771568,
+      "Aspect": 0.012308183005140501,
+      "Slope_cos": 0.01227662323594295,
+      "Aspect-W": 0.0015176587871790826,
+      "Aspect-S": 0.0013599485200987054,
+      "Road-SW": 0.0011814317793436607,
+      "Aspect-NE": 0.0011701817041056737,
+      "Road-E": 0.0011559703468962694,
+      "Aspect-SE": 0.0011499106317973396,
+      "Road-N": 0.0010374870277584717,
+      "Road-S": 0.0009638971136943714,
+      "Road-W": 0.000959720626465871,
+      "Aspect-SW": 0.0009458272840103416,
+      "Aspect-E": 0.0008820498898967417,
+      "Road-NE": 0.0008668134066355305,
+      "Aspect-N": 0.0007242283727319975,
+      "Road-SE": 0.0006766280282877371,
+      "Road-NW": 0.0006318462240816866,
+      "Aspect-NW": 0.0005255817451613494,
+      "Slope_sin": 0.00021700836346579404
+    },
+    "importance_permutation": {
+      "Evaporation_rate": 0.16568106192129634,
+      "Perennial / Seasonal": 0.003055073302469136,
+      "Aspect-E": 0.0007887852044753618,
+      "Road-SE": 0.0003571686921296391,
+      "Aspect-SE": 0.00028724199459876363,
+      "Road-SW": 0.0002143012152777457,
+      "Road-E": 0.00020314911265434388,
+      "Slope_cos": 0.0001847632137346178,
+      "Road-NW": 0.00016276041666668517,
+      "Aspect-W": 0.0001525125385802517,
+      "Road-N": 0.00013171537422841385,
+      "Aspect-NW": 0.00012930410879632425,
+      "Temperature_rate": 0.00010097173996910236,
+      "Aspect-SW": 9.192949459877476e-05,
+      "Road-NE": 7.294077932102905e-05,
+      "Slope_sin": 2.019434799386266e-05,
+      "Road-W": -5.244502314811772e-05,
+      "Road-S": -7.294077932097353e-05,
+      "Dewpoint_rate": -8.439429012340183e-05,
+      "Evaporation_mean": -0.0001669801311728558,
+      "Dewpoint_mean": -0.00031045042438273553,
+      "Aspect-S": -0.00035114052854933185,
+      "Precipitation_mean": -0.0006459177276234684,
+      "Elev": -0.0007191599151234795,
+      "Precipitation_rate": -0.0007565345293209624,
+      "Aspect-N": -0.0009066358024691134,
+      "Temperature_mean": -0.0010160469714506127,
+      "Aspect-NE": -0.0016770351080246826,
+      "Aspect": -0.002125831886574059
+    },
+    "n_distinct_feature_rows": 2772
+  },
+  "m2": {
+    "name": "model2_refined",
+    "title": "Model 2 (refined, Version A)",
+    "n_rows": 3278,
+    "n_dried": 718,
+    "n_features_in": 25,
+    "features_in": [
+      "Perennial / Seasonal",
+      "Elev",
+      "Aspect",
+      "Road-N",
+      "Road-NE",
+      "Road-E",
+      "Road-SE",
+      "Road-S",
+      "Road-SW",
+      "Road-W",
+      "Road-NW",
+      "Aspect-N",
+      "Aspect-NE",
+      "Aspect-E",
+      "Aspect-SE",
+      "Aspect-S",
+      "Aspect-SW",
+      "Aspect-W",
+      "Aspect-NW",
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean"
+    ],
+    "features_used": [
+      "Perennial / Seasonal",
+      "Elev",
+      "Aspect",
+      "Road-N",
+      "Road-NE",
+      "Road-E",
+      "Road-SE",
+      "Road-S",
+      "Road-SW",
+      "Road-W",
+      "Road-NW",
+      "Aspect-N",
+      "Aspect-NE",
+      "Aspect-E",
+      "Aspect-SE",
+      "Aspect-S",
+      "Aspect-SW",
+      "Aspect-W",
+      "Aspect-NW",
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean"
+    ],
+    "n_train": 2294,
+    "n_test": 984,
+    "n_test_dried": 216,
+    "test": {
+      "accuracy": 0.9898373983739838,
+      "precision": 0.9681818181818181,
+      "recall": 0.9861111111111112,
+      "f1": 0.9770642201834863,
+      "roc_auc": 0.9941556954089507
+    },
+    "confusion": {
+      "tn": 761,
+      "fp": 7,
+      "fn": 3,
+      "tp": 213
+    },
+    "cv": {
+      "f1_mean": 0.9832066250479168,
+      "f1_sd": 0.004016573025892543,
+      "auc_mean": 0.9936990093240092,
+      "auc_sd": 0.0040446665089110025,
+      "f1_folds": [
+        0.9859154929577465,
+        0.9859154929577465,
+        0.986013986013986,
+        0.975609756097561,
+        0.9825783972125436
+      ]
+    },
+    "importance_impurity": {
+      "Temperature_rate": 0.3229306758030062,
+      "Dewpoint_rate": 0.19951745885855748,
+      "Precipitation_mean": 0.1250087966508453,
+      "Precipitation_rate": 0.12245097557097749,
+      "Dewpoint_mean": 0.06653751669644896,
+      "Temperature_mean": 0.05301930312585224,
+      "Perennial / Seasonal": 0.04297376935705892,
+      "Elev": 0.023207529309095597,
+      "Aspect": 0.019500975173814415,
+      "Road-SW": 0.0025539968209345025,
+      "Road-E": 0.002200234868172433,
+      "Road-W": 0.001931386409777763,
+      "Road-N": 0.0018447745863437105,
+      "Aspect-W": 0.0018351169232708271,
+      "Aspect-NE": 0.0016819557321112641,
+      "Aspect-S": 0.0015645426010819333,
+      "Road-S": 0.0015431494417889368,
+      "Road-NE": 0.001492966128814436,
+      "Aspect-SW": 0.001417378496864888,
+      "Aspect-SE": 0.0013999198970579688,
+      "Aspect-E": 0.0013540222504329251,
+      "Road-SE": 0.0012506475808745255,
+      "Road-NW": 0.0010478975914578097,
+      "Aspect-N": 0.0009324837596554693,
+      "Aspect-NW": 0.0008025263657040752
+    },
+    "importance_permutation": {
+      "Temperature_rate": 0.022840108989197593,
+      "Perennial / Seasonal": 0.0036449291087963577,
+      "Dewpoint_rate": 0.0009985652970679437,
+      "Aspect-E": 0.0006190923996913789,
+      "Aspect-W": 0.00017029562114203589,
+      "Aspect-NW": 0.00012870129243838235,
+      "Aspect-SW": 9.192949459879696e-05,
+      "Road-N": 7.384500385808624e-05,
+      "Road-SE": 7.052951388896167e-05,
+      "Road-NW": -1.8084490740255531e-06,
+      "Aspect-SE": -6.811824845673887e-05,
+      "Road-SW": -9.042245370367574e-05,
+      "Road-E": -0.00028874903549381826,
+      "Road-NE": -0.0003185884452159615,
+      "Road-W": -0.000371937692901203,
+      "Road-S": -0.0004894868827159504,
+      "Aspect-S": -0.000630244502314814,
+      "Dewpoint_mean": -0.0007426697530863669,
+      "Precipitation_mean": -0.0007975260416666185,
+      "Precipitation_rate": -0.0009443118248455895,
+      "Temperature_mean": -0.0010868778935184565,
+      "Elev": -0.0011534891010802184,
+      "Aspect-N": -0.0015404972029320451,
+      "Aspect": -0.002250012056327089,
+      "Aspect-NE": -0.0027500482253085766
+    },
+    "n_distinct_feature_rows": 2772
+  },
+  "m3va": {
+    "name": "model3_version_a",
+    "title": "Model 3 with Version A window",
+    "n_rows": 3278,
+    "n_dried": 718,
+    "n_features_in": 9,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean",
+      "Perennial / Seasonal"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean",
+      "Perennial / Seasonal"
+    ],
+    "n_train": 2294,
+    "n_test": 984,
+    "n_test_dried": 216,
+    "test": {
+      "accuracy": 0.9827235772357723,
+      "precision": 0.9383259911894273,
+      "recall": 0.9861111111111112,
+      "f1": 0.9616252821670429,
+      "roc_auc": 0.9981523678626544
+    },
+    "confusion": {
+      "tn": 754,
+      "fp": 14,
+      "fn": 3,
+      "tp": 213
+    },
+    "cv": {
+      "f1_mean": 0.9744180519957837,
+      "f1_sd": 0.01364612378763214,
+      "auc_mean": 0.9922049237112714,
+      "auc_sd": 0.0038061898002130566,
+      "f1_folds": [
+        0.9825783972125436,
+        0.9787234042553191,
+        0.9556313993174061,
+        0.9621993127147767,
+        0.9929577464788732
+      ]
+    },
+    "importance_impurity": {
+      "Evaporation_rate": 0.4131200505613336,
+      "Temperature_rate": 0.2288685256031476,
+      "Dewpoint_rate": 0.12815619345720217,
+      "Precipitation_rate": 0.07233682005805173,
+      "Precipitation_mean": 0.07221214883835429,
+      "Evaporation_mean": 0.03734977030915873,
+      "Perennial / Seasonal": 0.02517073264990468,
+      "Temperature_mean": 0.022785758522847224
+    },
+    "importance_permutation": {
+      "Evaporation_rate": 0.17268850067515437,
+      "Dewpoint_rate": 0.004084080825617375,
+      "Precipitation_mean": 0.0038248697916667294,
+      "Perennial / Seasonal": 0.003482470100308721,
+      "Temperature_rate": 0.0033305603780864556,
+      "Precipitation_rate": 0.003317901234567966,
+      "Temperature_mean": 0.0031349464699074623,
+      "Evaporation_mean": 0.00234887393904325
+    },
+    "n_distinct_feature_rows": 204,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 50.188259742260435,
+        "Temperature_mean": 50.1178931882179,
+        "Precipitation_rate": 4.957298932670256,
+        "Evaporation_rate": 4.196567767901943,
+        "Temperature_rate": 3.074761964732028,
+        "Precipitation_mean": 2.9242660210533002,
+        "Dewpoint_rate": 2.4531452737402724,
+        "Evaporation_mean": 1.317313750393827
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          50.19
+        ]
+      ],
+      "final": {
+        "Precipitation_rate": 4.105681861712121,
+        "Evaporation_rate": 3.8767818017499653,
+        "Temperature_rate": 2.7564845096469353,
+        "Precipitation_mean": 2.7344600105140557,
+        "Temperature_mean": 2.23898014017197,
+        "Dewpoint_rate": 2.0115226829864548,
+        "Evaporation_mean": 1.3115718770351763
+      }
+    }
+  },
+  "m3": {
+    "name": "model3_final",
+    "title": "Model 3 (fixed window)",
+    "n_rows": 3287,
+    "n_dried": 727,
+    "n_features_in": 9,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean",
+      "Perennial / Seasonal"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Perennial / Seasonal"
+    ],
+    "n_train": 2300,
+    "n_test": 987,
+    "n_test_dried": 218,
+    "test": {
+      "accuracy": 0.7193515704154002,
+      "precision": 0.40514469453376206,
+      "recall": 0.5779816513761468,
+      "f1": 0.4763705103969754,
+      "roc_auc": 0.7482671406926664
+    },
+    "confusion": {
+      "tn": 584,
+      "fp": 185,
+      "fn": 92,
+      "tp": 126
+    },
+    "cv": {
+      "f1_mean": 0.5111244641153896,
+      "f1_sd": 0.02319004629180765,
+      "auc_mean": 0.7600503181093529,
+      "auc_sd": 0.010512102660761214,
+      "f1_folds": [
+        0.5325779036827195,
+        0.4712328767123288,
+        0.4985835694050991,
+        0.5263157894736842,
+        0.5269121813031161
+      ]
+    },
+    "importance_impurity": {
+      "Perennial / Seasonal": 0.6491042532040622,
+      "Precipitation_rate": 0.0860985579236345,
+      "Temperature_mean": 0.07372144855698103,
+      "Temperature_rate": 0.06546986687063719,
+      "Precipitation_mean": 0.050291243393164375,
+      "Dewpoint_rate": 0.03902087658174637,
+      "Evaporation_rate": 0.03629375346977424
+    },
+    "importance_permutation": {
+      "Perennial / Seasonal": 0.16433590627646993,
+      "Precipitation_rate": 0.0032611159494636667,
+      "Temperature_mean": 0.002816716574605316,
+      "Dewpoint_rate": 0.001293232006299061,
+      "Precipitation_mean": -0.0007032843798094546,
+      "Temperature_rate": -0.0010367330382601736,
+      "Evaporation_rate": -0.0012625117810573627
+    },
+    "n_distinct_feature_rows": 23,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 938.5865535316007,
+        "Temperature_mean": 884.5422249231037,
+        "Evaporation_mean": 77.19768950241046,
+        "Precipitation_rate": 65.04368213308209,
+        "Evaporation_rate": 60.702978030781075,
+        "Precipitation_mean": 43.07703569044082,
+        "Dewpoint_rate": 21.392751599715204,
+        "Temperature_rate": 10.790814250994567
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          938.59
+        ],
+        [
+          "Evaporation_mean",
+          75.62
+        ]
+      ],
+      "final": {
+        "Dewpoint_rate": 9.394916367030232,
+        "Temperature_rate": 8.676762171959771,
+        "Precipitation_mean": 7.195545602442075,
+        "Temperature_mean": 5.718691879796502,
+        "Precipitation_rate": 4.748205517299069,
+        "Evaporation_rate": 1.3672673754905689
+      }
+    },
+    "new_area_auc": 0.6297933502407153,
+    "n_groups": 12
+  },
+  "m3b": {
+    "name": "model3b_drought",
+    "title": "Model 3b: drought-dried vs active",
+    "n_rows": 2786,
+    "n_dried": 226,
+    "n_features_in": 9,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean",
+      "Perennial / Seasonal"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Perennial / Seasonal"
+    ],
+    "n_train": 1950,
+    "n_test": 836,
+    "n_test_dried": 68,
+    "test": {
+      "accuracy": 0.7930622009569378,
+      "precision": 0.25806451612903225,
+      "recall": 0.8235294117647058,
+      "f1": 0.3929824561403509,
+      "roc_auc": 0.8543677236519608
+    },
+    "confusion": {
+      "tn": 607,
+      "fp": 161,
+      "fn": 12,
+      "tp": 56
+    },
+    "cv": {
+      "f1_mean": 0.39054529932400206,
+      "f1_sd": 0.02917733369594916,
+      "auc_mean": 0.8615864658816426,
+      "auc_sd": 0.030458899329763985,
+      "f1_folds": [
+        0.43956043956043955,
+        0.3883495145631068,
+        0.3492063492063492,
+        0.39572192513368987,
+        0.37988826815642457
+      ]
+    },
+    "importance_impurity": {
+      "Perennial / Seasonal": 0.4094786850976702,
+      "Precipitation_rate": 0.14937631555027006,
+      "Temperature_rate": 0.14101495996831875,
+      "Temperature_mean": 0.12603403249994613,
+      "Precipitation_mean": 0.08164457908335736,
+      "Dewpoint_rate": 0.050210042660575896,
+      "Evaporation_rate": 0.042241385139861705
+    },
+    "importance_permutation": {
+      "Perennial / Seasonal": 0.10475451899509802,
+      "Precipitation_rate": 0.01605296415441172,
+      "Temperature_rate": 0.0037501914828431014,
+      "Temperature_mean": 0.0033155254289215508,
+      "Evaporation_rate": 0.0023571537990196177,
+      "Dewpoint_rate": 0.0008176317401960454,
+      "Precipitation_mean": -0.0010579427083333259
+    },
+    "n_distinct_feature_rows": 22,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 919.6741042852573,
+        "Temperature_mean": 860.4589785547475,
+        "Evaporation_mean": 77.94031181062223,
+        "Precipitation_rate": 62.96608960801542,
+        "Evaporation_rate": 61.29669439065169,
+        "Precipitation_mean": 42.32562562519808,
+        "Dewpoint_rate": 22.048254087758956,
+        "Temperature_rate": 11.041825085776578
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          919.67
+        ],
+        [
+          "Evaporation_mean",
+          76.46
+        ]
+      ],
+      "final": {
+        "Dewpoint_rate": 9.702518028881565,
+        "Temperature_rate": 8.871478890063367,
+        "Precipitation_mean": 7.318766230159242,
+        "Temperature_mean": 5.972641349522882,
+        "Precipitation_rate": 4.609661845198318,
+        "Evaporation_rate": 1.3672679499735632
+      }
+    },
+    "new_area_auc": 0.7520965846238938,
+    "n_groups": 12
+  },
+  "m3bc": {
+    "name": "model3b_drought_climate_only",
+    "title": "Model 3b, climate only",
+    "n_rows": 2786,
+    "n_dried": 226,
+    "n_features_in": 8,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean"
+    ],
+    "n_train": 1950,
+    "n_test": 836,
+    "n_test_dried": 68,
+    "test": {
+      "accuracy": 0.666267942583732,
+      "precision": 0.17133956386292834,
+      "recall": 0.8088235294117647,
+      "f1": 0.2827763496143959,
+      "roc_auc": 0.7711397058823529
+    },
+    "confusion": {
+      "tn": 502,
+      "fp": 266,
+      "fn": 13,
+      "tp": 55
+    },
+    "cv": {
+      "f1_mean": 0.2922736526674492,
+      "f1_sd": 0.028742939557254436,
+      "auc_mean": 0.7682310537439613,
+      "auc_sd": 0.03359855435750347,
+      "f1_folds": [
+        0.2962962962962963,
+        0.26717557251908397,
+        0.2575107296137339,
+        0.3391304347826087,
+        0.301255230125523
+      ]
+    },
+    "importance_impurity": {
+      "Temperature_rate": 0.27043210129223033,
+      "Precipitation_rate": 0.2466591005631205,
+      "Temperature_mean": 0.23810469655181676,
+      "Precipitation_mean": 0.11356292500489391,
+      "Dewpoint_rate": 0.08045551291230905,
+      "Evaporation_rate": 0.05078566367562936
+    },
+    "importance_permutation": {
+      "Precipitation_rate": 0.030690870098039225,
+      "Temperature_rate": 0.010661764705882338,
+      "Temperature_mean": 0.005849800857843113,
+      "Evaporation_rate": 0.0038717830882352366,
+      "Dewpoint_rate": 0.0028377757352941015,
+      "Precipitation_mean": 0.001518458946078427
+    },
+    "n_distinct_feature_rows": 12,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 919.6741042852573,
+        "Temperature_mean": 860.4589785547475,
+        "Evaporation_mean": 77.94031181062223,
+        "Precipitation_rate": 62.96608960801542,
+        "Evaporation_rate": 61.29669439065169,
+        "Precipitation_mean": 42.32562562519808,
+        "Dewpoint_rate": 22.048254087758956,
+        "Temperature_rate": 11.041825085776578
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          919.67
+        ],
+        [
+          "Evaporation_mean",
+          76.46
+        ]
+      ],
+      "final": {
+        "Dewpoint_rate": 9.702518028881565,
+        "Temperature_rate": 8.871478890063367,
+        "Precipitation_mean": 7.318766230159242,
+        "Temperature_mean": 5.972641349522882,
+        "Precipitation_rate": 4.609661845198318,
+        "Evaporation_rate": 1.3672679499735632
+      }
+    },
+    "new_area_auc": 0.5425504701327434,
+    "n_groups": 12
+  },
+  "type": {
+    "name": "cmp_type_only",
+    "title": "Spring type only",
+    "n_rows": 3287,
+    "n_dried": 727,
+    "n_features_in": 1,
+    "features_in": [
+      "Perennial / Seasonal"
+    ],
+    "features_used": [
+      "Perennial / Seasonal"
+    ],
+    "n_train": 2300,
+    "n_test": 987,
+    "n_test_dried": 218,
+    "test": {
+      "accuracy": 0.7993920972644377,
+      "precision": 0.5675675675675675,
+      "recall": 0.3853211009174312,
+      "f1": 0.45901639344262296,
+      "roc_auc": 0.6510480667135919
+    },
+    "confusion": {
+      "tn": 705,
+      "fp": 64,
+      "fn": 134,
+      "tp": 84
+    },
+    "cv": {
+      "f1_mean": 0.47964919990722954,
+      "f1_sd": 0.01951927395659935,
+      "auc_mean": 0.6622753306565896,
+      "auc_sd": 0.010683367166299168,
+      "f1_folds": [
+        0.4578313253012048,
+        0.48760330578512395,
+        0.46218487394957986,
+        0.47843137254901963,
+        0.5121951219512195
+      ]
+    },
+    "importance_impurity": {
+      "Perennial / Seasonal": 1.0
+    },
+    "importance_permutation": {
+      "Perennial / Seasonal": 0.14689427470442956
+    },
+    "n_distinct_feature_rows": 2,
+    "vif": {
+      "initial": {},
+      "dropped": [],
+      "final": {}
+    },
+    "new_area_auc": 0.5839811511348005,
+    "n_groups": 12
+  },
+  "clim": {
+    "name": "cmp_climate_only",
+    "title": "Climate only",
+    "n_rows": 3287,
+    "n_dried": 727,
+    "n_features_in": 8,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean"
+    ],
+    "n_train": 2300,
+    "n_test": 987,
+    "n_test_dried": 218,
+    "test": {
+      "accuracy": 0.6210739614994935,
+      "precision": 0.2925531914893617,
+      "recall": 0.5045871559633027,
+      "f1": 0.37037037037037035,
+      "roc_auc": 0.624742009758891
+    },
+    "confusion": {
+      "tn": 503,
+      "fp": 266,
+      "fn": 108,
+      "tp": 110
+    },
+    "cv": {
+      "f1_mean": 0.4008437410515069,
+      "f1_sd": 0.02336562617119466,
+      "auc_mean": 0.6366499616202173,
+      "auc_sd": 0.02481315182417689,
+      "f1_folds": [
+        0.42748091603053434,
+        0.36674816625916873,
+        0.4116222760290557,
+        0.41836734693877553,
+        0.38
+      ]
+    },
+    "importance_impurity": {
+      "Precipitation_rate": 0.2582988996350458,
+      "Temperature_mean": 0.21796147289999918,
+      "Temperature_rate": 0.21238321101031418,
+      "Precipitation_mean": 0.11857137707260079,
+      "Dewpoint_rate": 0.10383808656638235,
+      "Evaporation_rate": 0.08894695281565776
+    },
+    "importance_permutation": {
+      "Precipitation_rate": 0.014683969411006826,
+      "Dewpoint_rate": 0.0082136338149152,
+      "Precipitation_mean": 0.004006454229847012,
+      "Temperature_mean": 0.003018634948282728,
+      "Evaporation_rate": 0.001328426050751097,
+      "Temperature_rate": -0.0007984276016749558
+    },
+    "n_distinct_feature_rows": 12,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 938.5865535316007,
+        "Temperature_mean": 884.5422249231037,
+        "Evaporation_mean": 77.19768950241046,
+        "Precipitation_rate": 65.04368213308209,
+        "Evaporation_rate": 60.702978030781075,
+        "Precipitation_mean": 43.07703569044082,
+        "Dewpoint_rate": 21.392751599715204,
+        "Temperature_rate": 10.790814250994567
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          938.59
+        ],
+        [
+          "Evaporation_mean",
+          75.62
+        ]
+      ],
+      "final": {
+        "Dewpoint_rate": 9.394916367030232,
+        "Temperature_rate": 8.676762171959771,
+        "Precipitation_mean": 7.195545602442075,
+        "Temperature_mean": 5.718691879796502,
+        "Precipitation_rate": 4.748205517299069,
+        "Evaporation_rate": 1.3672673754905689
+      }
+    },
+    "new_area_auc": 0.5267427677957358,
+    "n_groups": 12
+  },
+  "eq": {
+    "name": "cmp_earthquake",
+    "title": "Contrast: earthquake-dried vs active",
+    "n_rows": 2789,
+    "n_dried": 229,
+    "n_features_in": 9,
+    "features_in": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Dewpoint_mean",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Evaporation_mean",
+      "Perennial / Seasonal"
+    ],
+    "features_used": [
+      "Dewpoint_rate",
+      "Temperature_rate",
+      "Precipitation_rate",
+      "Evaporation_rate",
+      "Temperature_mean",
+      "Precipitation_mean",
+      "Perennial / Seasonal"
+    ],
+    "n_train": 1952,
+    "n_test": 837,
+    "n_test_dried": 69,
+    "test": {
+      "accuracy": 0.7180406212664278,
+      "precision": 0.14767932489451477,
+      "recall": 0.5072463768115942,
+      "f1": 0.22875816993464052,
+      "roc_auc": 0.7086730072463768
+    },
+    "confusion": {
+      "tn": 566,
+      "fp": 202,
+      "fn": 34,
+      "tp": 35
+    },
+    "cv": {
+      "f1_mean": 0.21350568952812427,
+      "f1_sd": 0.014235873126497173,
+      "auc_mean": 0.703723014794686,
+      "auc_sd": 0.021967103013440462,
+      "f1_folds": [
+        0.2360655737704918,
+        0.2235294117647059,
+        0.19895287958115182,
+        0.20064724919093851,
+        0.20833333333333334
+      ]
+    },
+    "importance_impurity": {
+      "Perennial / Seasonal": 0.5446949276764608,
+      "Dewpoint_rate": 0.11665669688418219,
+      "Precipitation_rate": 0.09225159891934899,
+      "Temperature_rate": 0.06981706217429179,
+      "Evaporation_rate": 0.06844661430962835,
+      "Temperature_mean": 0.06512561497543241,
+      "Precipitation_mean": 0.04300748506065568
+    },
+    "importance_permutation": {
+      "Perennial / Seasonal": 0.10562537741545894,
+      "Temperature_mean": 0.00445255887681163,
+      "Precipitation_mean": 0.001321897644927561,
+      "Evaporation_rate": -0.0009992074275362085,
+      "Dewpoint_rate": -0.0016143946256038989,
+      "Precipitation_rate": -0.0023220486111110938,
+      "Temperature_rate": -0.0023899833937198077
+    },
+    "n_distinct_feature_rows": 23,
+    "vif": {
+      "initial": {
+        "Dewpoint_mean": 859.2516946426077,
+        "Temperature_mean": 795.4896322469207,
+        "Evaporation_mean": 77.1179938005833,
+        "Evaporation_rate": 60.14173757016571,
+        "Precipitation_rate": 56.02917789928329,
+        "Precipitation_mean": 39.86113235076459,
+        "Dewpoint_rate": 21.445762885289177,
+        "Temperature_rate": 11.212608947478198
+      },
+      "dropped": [
+        [
+          "Dewpoint_mean",
+          859.25
+        ],
+        [
+          "Evaporation_mean",
+          75.8
+        ]
+      ],
+      "final": {
+        "Dewpoint_rate": 9.44197828874026,
+        "Temperature_rate": 8.967285885198251,
+        "Precipitation_mean": 7.4459900743938485,
+        "Temperature_mean": 5.96103903766667,
+        "Precipitation_rate": 4.456861691351571,
+        "Evaporation_rate": 1.3835990206635678
+      }
+    },
+    "new_area_auc": 0.5712310657751092,
+    "n_groups": 12
+  }
+}

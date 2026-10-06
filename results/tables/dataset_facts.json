@@ -1,0 +1,241 @@
+{
+  "n_springs": 3287,
+  "n_dried": 727,
+  "n_active": 2560,
+  "pct_dried": 22.11743230909644,
+  "n_perennial": 2784,
+  "n_seasonal": 503,
+  "pct_perennial": 84.69729236385763,
+  "pct_dried_perennial": 15.517241379310345,
+  "pct_dried_seasonal": 58.64811133200796,
+  "drying_year": {
+    "n_with_year": 723,
+    "n_missing": 4,
+    "min": 1943,
+    "max": 2023,
+    "median": 2015.0,
+    "n_2015": 241,
+    "pct_2015": 33.14993122420908,
+    "first_complete_window_end": 1964,
+    "n_before_first_complete": 5,
+    "n_since_2000": 653
+  },
+  "raw": {
+    "n_records": 5692,
+    "n_springs": 5170,
+    "n_ponds": 522,
+    "springs_by_municipality": {
+      "Dhulikhel": 1064,
+      "Roshi RM": 924,
+      "Panauti": 854,
+      "Panchkhal": 838,
+      "Temal": 665,
+      "Namobuudha": 448,
+      "Bethanchownk": 377
+    }
+  },
+  "survey_dates": {
+    "n_records_with_date": 5022,
+    "n_parsed_2023_2024": 4849,
+    "pct_2024": 86.03835842441741,
+    "p05": "2023-12-18",
+    "median": "2024-02-08",
+    "p95": "2024-04-18"
+  },
+  "bs_to_ad_offset": {
+    "57": 721,
+    "53": 1,
+    "49": 1
+  },
+  "drying_cause": {
+    "earthquake": 229,
+    "drought": 226,
+    "infrastructure": 105,
+    "neglect_or_disruption": 95,
+    "natural_disaster": 64,
+    "land_use": 5,
+    "unknown": 3
+  },
+  "earthquake_dried_in_2015": 195,
+  "n_dried_2015_by_cause": {
+    "earthquake": 195,
+    "drought": 23,
+    "infrastructure": 13,
+    "natural_disaster": 6,
+    "neglect_or_disruption": 4
+  },
+  "drought_drying_year_median": 2011.0,
+  "quality": {
+    "duplicate_coordinates": 51,
+    "identical_rows": 36,
+    "slope_sin_min": 0.9999989,
+    "slope_sin_max": 1.0,
+    "slope_cos_max": 0.001446203,
+    "n_missing_formation": 26
+  },
+  "grid": {
+    "n_cells": 12,
+    "springs_per_cell_min": 1,
+    "springs_per_cell_max": 1065,
+    "dried_pct_per_cell_min": 0.0,
+    "dried_pct_per_cell_max": 44.14414414414414,
+    "cells_all_active": 2
+  },
+  "elevation": {
+    "median": 1533.0,
+    "min": 592.0,
+    "max": 2753.0,
+    "n_1400_1700": 1820,
+    "dried_pct_by_band": {
+      "<1000": 33.587786259541986,
+      "1000-1400": 30.619469026548675,
+      "1400-1700": 22.032967032967033,
+      "1700-2000": 13.418530351437699,
+      ">2000": 17.24137931034483
+    },
+    "springs_by_band": {
+      "<1000": 131,
+      "1000-1400": 565,
+      "1400-1700": 1820,
+      "1700-2000": 626,
+      ">2000": 145
+    }
+  },
+  "aspect": {
+    "counts": {
+      "N": {
+        "active": 390,
+        "dried": 103
+      },
+      "NE": {
+        "active": 386,
+        "dried": 64
+      },
+      "E": {
+        "active": 474,
+        "dried": 76
+      },
+      "SE": {
+        "active": 341,
+        "dried": 96
+      },
+      "S": {
+        "active": 192,
+        "dried": 81
+      },
+      "SW": {
+        "active": 194,
+        "dried": 91
+      },
+      "W": {
+        "active": 244,
+        "dried": 102
+      },
+      "NW": {
+        "active": 339,
+        "dried": 114
+      }
+    },
+    "dried_pct": {
+      "N": 20.89,
+      "NE": 14.22,
+      "E": 13.82,
+      "SE": 21.97,
+      "S": 29.67,
+      "SW": 31.93,
+      "W": 29.48,
+      "NW": 25.17
+    }
+  },
+  "roads": {
+    "mean_by_direction": {
+      "active": {
+        "Road-N": 0.2285,
+        "Road-NE": 0.2117,
+        "Road-E": 0.2344,
+        "Road-SE": 0.2176,
+        "Road-S": 0.2133,
+        "Road-SW": 0.1754,
+        "Road-W": 0.2023,
+        "Road-NW": 0.1766
+      },
+      "dried": {
+        "Road-N": 0.2201,
+        "Road-NE": 0.2627,
+        "Road-E": 0.282,
+        "Road-SE": 0.2613,
+        "Road-S": 0.2613,
+        "Road-SW": 0.2393,
+        "Road-W": 0.2063,
+        "Road-NW": 0.1926
+      }
+    },
+    "directions_dried_higher": [
+      "Road-NE",
+      "Road-E",
+      "Road-SE",
+      "Road-S",
+      "Road-SW",
+      "Road-W",
+      "Road-NW"
+    ],
+    "mean_total_active": 1.659765625,
+    "mean_total_dried": 1.9257221458046767
+  },
+  "outside": {
+    "n_springs": 2056,
+    "pct_in_new_cells": 21.69260700389105,
+    "by_municipality": {
+      "Bethanchownk": {
+        "springs": 65,
+        "cells": 2,
+        "pct_in_new_cells": 0.0,
+        "pct_dried": 10.8
+      },
+      "Dhulikhel": {
+        "springs": 596,
+        "cells": 5,
+        "pct_in_new_cells": 22.1,
+        "pct_dried": 20.6
+      },
+      "Namobuudha": {
+        "springs": 55,
+        "cells": 3,
+        "pct_in_new_cells": 0.0,
+        "pct_dried": 9.1
+      },
+      "Panauti": {
+        "springs": 2,
+        "cells": 1,
+        "pct_in_new_cells": 0.0,
+        "pct_dried": 100.0
+      },
+      "Panchkhal": {
+        "springs": 837,
+        "cells": 4,
+        "pct_in_new_cells": 37.3,
+        "pct_dried": 38.9
+      },
+      "Roshi RM": {
+        "springs": 4,
+        "cells": 2,
+        "pct_in_new_cells": 25.0,
+        "pct_dried": 75.0
+      },
+      "Temal": {
+        "springs": 497,
+        "cells": 5,
+        "pct_in_new_cells": 0.2,
+        "pct_dried": 32.6
+      }
+    }
+  },
+  "augmentation": {
+    "rows_per_active": 9,
+    "rows_active": 23040,
+    "rows_dried": 8795,
+    "pct_dried_after": 27.626825820637663,
+    "dried_rows_before_2015": 3021,
+    "pct_dried_rows_before_2015": 34.34906196702672
+  }
+}

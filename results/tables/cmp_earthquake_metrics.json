@@ -1,0 +1,107 @@
+{
+  "name": "cmp_earthquake",
+  "title": "Contrast: earthquake-dried vs active",
+  "n_rows": 2789,
+  "n_dried": 229,
+  "n_features_in": 9,
+  "features_in": [
+    "Dewpoint_rate",
+    "Temperature_rate",
+    "Precipitation_rate",
+    "Evaporation_rate",
+    "Dewpoint_mean",
+    "Temperature_mean",
+    "Precipitation_mean",
+    "Evaporation_mean",
+    "Perennial / Seasonal"
+  ],
+  "features_used": [
+    "Dewpoint_rate",
+    "Temperature_rate",
+    "Precipitation_rate",
+    "Evaporation_rate",
+    "Temperature_mean",
+    "Precipitation_mean",
+    "Perennial / Seasonal"
+  ],
+  "n_train": 1952,
+  "n_test": 837,
+  "n_test_dried": 69,
+  "test": {
+    "accuracy": 0.7180406212664278,
+    "precision": 0.14767932489451477,
+    "recall": 0.5072463768115942,
+    "f1": 0.22875816993464052,
+    "roc_auc": 0.7086730072463768
+  },
+  "confusion": {
+    "tn": 566,
+    "fp": 202,
+    "fn": 34,
+    "tp": 35
+  },
+  "cv": {
+    "f1_mean": 0.21350568952812427,
+    "f1_sd": 0.014235873126497173,
+    "auc_mean": 0.703723014794686,
+    "auc_sd": 0.021967103013440462,
+    "f1_folds": [
+      0.2360655737704918,
+      0.2235294117647059,
+      0.19895287958115182,
+      0.20064724919093851,
+      0.20833333333333334
+    ]
+  },
+  "importance_impurity": {
+    "Perennial / Seasonal": 0.5446949276764608,
+    "Dewpoint_rate": 0.11665669688418219,
+    "Precipitation_rate": 0.09225159891934899,
+    "Temperature_rate": 0.06981706217429179,
+    "Evaporation_rate": 0.06844661430962835,
+    "Temperature_mean": 0.06512561497543241,
+    "Precipitation_mean": 0.04300748506065568
+  },
+  "importance_permutation": {
+    "Perennial / Seasonal": 0.10562537741545894,
+    "Temperature_mean": 0.00445255887681163,
+    "Precipitation_mean": 0.001321897644927561,
+    "Evaporation_rate": -0.0009992074275362085,
+    "Dewpoint_rate": -0.0016143946256038989,
+    "Precipitation_rate": -0.0023220486111110938,
+    "Temperature_rate": -0.0023899833937198077
+  },
+  "n_distinct_feature_rows": 23,
+  "vif": {
+    "initial": {
+      "Dewpoint_mean": 859.2516946426077,
+      "Temperature_mean": 795.4896322469207,
+      "Evaporation_mean": 77.1179938005833,
+      "Evaporation_rate": 60.14173757016571,
+      "Precipitation_rate": 56.02917789928329,
+      "Precipitation_mean": 39.86113235076459,
+      "Dewpoint_rate": 21.445762885289177,
+      "Temperature_rate": 11.212608947478198
+    },
+    "dropped": [
+      [
+        "Dewpoint_mean",
+        859.25
+      ],
+      [
+        "Evaporation_mean",
+        75.8
+      ]
+    ],
+    "final": {
+      "Dewpoint_rate": 9.44197828874026,
+      "Temperature_rate": 8.967285885198251,
+      "Precipitation_mean": 7.4459900743938485,
+      "Temperature_mean": 5.96103903766667,
+      "Precipitation_rate": 4.456861691351571,
+      "Evaporation_rate": 1.3835990206635678
+    }
+  },
+  "new_area_auc": 0.5712310657751092,
+  "n_groups": 12
+}

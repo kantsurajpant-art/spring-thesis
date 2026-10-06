@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spring-drying"
+version = "0.1.0"
+description = "ERA5-Land climate features and Random Forest classification of spring drying (ME thesis)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy", "pandas", "xarray", "netCDF4", "scipy", "pymannkendall",
+    "scikit-learn", "matplotlib", "seaborn",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
