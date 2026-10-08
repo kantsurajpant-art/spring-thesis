@@ -490,8 +490,10 @@ NB05 = [
 * **Comparisons**: spring type only, climate only.
 * **Model 3b**: label screening by the survey's reported cause - drought-dried vs active springs, with
   earthquake-dried vs active as a contrast.
-* **Checks**: number of distinct feature rows, a lookup-table baseline, the effect of unshuffled CV,
-  and the Version A leakage diagnostic (window end year as the only input).
+* **Checks**: number of distinct feature rows, a lookup-table baseline, duplicate springs across the
+  train/test split, the effect of unshuffled CV, and the Version A leakage diagnostic (window end year
+  as the only input).
+* Every model also reports PR-AUC (average precision) and 95% bootstrap CIs of the test ROC-AUC and PR-AUC.
 """,
 MODEL_PREFIX,
 """
@@ -551,7 +553,7 @@ ax.legend(loc="lower right", fontsize=9)
 plt.tight_layout(); plt.savefig(FIGURES_DIR / "model3_comparison.png", dpi=300); plt.show()
 """,
 """MD:
-## Checks: lookup-table baseline, unshuffled CV, and the Version A leakage diagnostic
+## Checks: lookup-table baseline, duplicate springs across the split, unshuffled CV, and the Version A leakage diagnostic
 """,
 """
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -569,13 +571,24 @@ checks["lookup_table_auc"] = float(roc_auc_score(y_te, p))
 checks["test_rows_seen_in_train_pct"] = 100 * float(key(X_te).isin(set(key(X_tr))).mean())
 checks["n_distinct_rows"] = int(X.round(9).drop_duplicates().shape[0])
 
-# 2) The submitted report's CV: 5 folds in file order (no shuffling)
+# 2) Duplicate springs across the split: test springs whose exact coordinates also occur among the
+#    training springs, and the Model 3 test ROC-AUC with those springs left out
+coords = springs[["Latitude", "Longitude"]].reset_index(drop=True).astype(str).agg(",".join, axis=1)
+dup_te = coords[X_te.index].isin(set(coords[X_tr.index])).values
+p3 = fitted3.predict_proba(X_te.astype(float))[:, 1]
+checks["test_dup_coords"] = int(dup_te.sum())
+checks["test_dup_coords_dried"] = int(y_te[dup_te].sum())
+checks["test_dup_same_label_pct"] = 100 * float(np.mean([
+    y_te[i] in set(y[X_tr.index[coords[X_tr.index] == coords[X_te.index[i]]]]) for i in np.flatnonzero(dup_te)]))
+checks["test_auc_without_dups"] = float(roc_auc_score(y_te[~dup_te], p3[~dup_te]))
+
+# 3) The submitted report's CV: 5 folds in file order (no shuffling)
 unshuffled = cross_val_score(make_model3(), X, y, cv=5, scoring="f1")
 checks["cv_f1_unshuffled_mean"], checks["cv_f1_unshuffled_sd"] = float(unshuffled.mean()), float(unshuffled.std())
 checks["cv_f1_unshuffled_folds"] = [float(v) for v in unshuffled]
 checks["dried_pct_by_file_fifth"] = [100 * float(c.mean()) for c in np.array_split(y, 5)]
 
-# 3) Version A leakage diagnostic: the end year of each spring's Version A window as the ONLY input
+# 4) Version A leakage diagnostic: the end year of each spring's Version A window as the ONLY input
 window_end = data["dried_year"].where(data["dried"] == 1, WINDOW_END)
 diag = pd.DataFrame({"window_end_year": window_end, "dried": data["dried"]}).dropna()
 d_tr, d_te, dy_tr, dy_te = train_test_split(diag[["window_end_year"]], diag["dried"], test_size=0.3,

@@ -17,7 +17,7 @@ from sklearn.model_selection import (LeaveOneGroupOut, StratifiedKFold, cross_va
                                      cross_validate, train_test_split)
 
 from .config import FIGURES_DIR, RANDOM_STATE, TABLES_DIR
-from .evaluation import holdout_metrics
+from .evaluation import bootstrap_ci, holdout_metrics
 from .modeling import compute_vif
 
 
@@ -57,6 +57,8 @@ def run_experiment(name, title, X, y, model, groups=None, new_area=False,
         "features_in": list(X.columns), "features_used": names,
         "n_train": int(len(X_tr)), "n_test": int(len(X_te)), "n_test_dried": int(np.sum(y_te)),
         "test": {k: float(v) for k, v in holdout_metrics(y_te, y_pred, y_proba).items()},
+        "test_ci": bootstrap_ci(y_te, y_proba),
+        "test_prevalence": float(np.mean(y_te)),
         "confusion": {"tn": tn, "fp": fp, "fn": fn, "tp": tp},
         "cv": {"f1_mean": float(cv["test_f1"].mean()), "f1_sd": float(cv["test_f1"].std()),
                "auc_mean": float(cv["test_roc_auc"].mean()), "auc_sd": float(cv["test_roc_auc"].std()),
@@ -115,6 +117,10 @@ def print_result(result):
     t, c, cv = result["test"], result["confusion"], result["cv"]
     print(f"{result['title']}  (n = {result['n_rows']}, dried = {result['n_dried']}, test = {result['n_test']})")
     print("  test: " + ", ".join(f"{k} {v:.3f}" for k, v in t.items()))
+    if "test_ci" in result:
+        ci = result["test_ci"]
+        print(f"  95% bootstrap CI: ROC-AUC {ci['roc_auc'][0]:.3f}-{ci['roc_auc'][1]:.3f}, "
+              f"PR-AUC {ci['pr_auc'][0]:.3f}-{ci['pr_auc'][1]:.3f} (PR-AUC chance = {result['test_prevalence']:.3f})")
     print(f"  confusion: TN {c['tn']}  FP {c['fp']}  FN {c['fn']}  TP {c['tp']}")
     print(f"  5-fold CV (shuffled): F1 {cv['f1_mean']:.3f} +/- {cv['f1_sd']:.3f}, AUC {cv['auc_mean']:.3f} +/- {cv['auc_sd']:.3f}")
     if "new_area_auc" in result:

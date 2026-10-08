@@ -23,6 +23,7 @@ $$ latex $$ || plain-text version   display equation
 import json
 import re
 import shutil
+import unicodedata
 import zipfile
 from pathlib import Path
 
@@ -33,6 +34,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "report"
@@ -161,9 +163,42 @@ def apa_reference(ref):
     return "".join(parts)
 
 
+# BibTeX/pdfLaTeX-safe forms of non-ASCII characters found in Crossref metadata. Wiley titles and names use
+# U+2010 (hyphen), which pdfLaTeX cannot typeset: the error is raised while reading the .bbl, latexmk stops,
+# and every citation is left undefined. Accents are braced ({\'e}) so BibTeX sorts and abbreviates them as one letter.
+BIB_PUNCT = {"‐": "-", "‑": "-", "‒": "-", "–": "--", "—": "---", "‘": "`",
+             "’": "'", "“": "``", "”": "''", " ": "~"}
+BIB_ACCENT = {"́": "'", "̀": "`", "̂": "^", "̈": '"', "̃": "~", "̄": "=",
+              "̇": ".", "̌": "v", "̆": "u", "̊": "r", "̧": "c", "̨": "k", "̋": "H"}
+BIB_LETTER = {"ß": r"{\ss}", "æ": r"{\ae}", "Æ": r"{\AE}", "ø": r"{\o}", "Ø": r"{\O}", "å": r"{\aa}", "Å": r"{\AA}",
+              "ł": r"{\l}", "Ł": r"{\L}", "œ": r"{\oe}", "Œ": r"{\OE}", "ı": r"{\i}"}
+
+
+def bib_ascii(s):
+    out = []
+    for ch in s:
+        if ord(ch) < 128:
+            out.append(ch)
+        elif ch in BIB_PUNCT:
+            out.append(BIB_PUNCT[ch])
+        elif ch in BIB_LETTER:
+            out.append(BIB_LETTER[ch])
+        else:
+            base, *marks = unicodedata.normalize("NFD", ch)
+            if marks and all(m in BIB_ACCENT for m in marks) and ord(base) < 128:
+                base = {"i": r"\i", "j": r"\j"}.get(base, base)
+                for m in marks:
+                    a = BIB_ACCENT[m]
+                    base = f"\\{a}{base}" if not a.isalpha() else f"\\{a}{{{base}}}"
+                out.append("{" + base + "}")
+            else:
+                out.append(ch)  # left for latex_unicode / the \DeclareUnicodeCharacter fallbacks
+    return "".join(out)
+
+
 def bib_escape(s):
     s = s.replace("\\", "").replace("&", r"\&").replace("%", r"\%").replace("#", r"\#").replace("_", r"\_")
-    return latex_unicode(s)
+    return bib_ascii(latex_unicode(s))
 
 
 def bib_entry(ref):
@@ -352,7 +387,7 @@ def tex_inline(toks, refs):
     out = []
     for kind, v in toks:
         if kind == "text":
-            out.append(tex_escape(v))
+            out.append(re.sub(r'"([^"]+)"', r"``\1''", tex_escape(v)))
         elif kind == "code":
             out.append(r"\texttt{" + tex_escape(v).replace(r"\_", r"\_\allowbreak{}") + "}")
         elif kind == "bold":
@@ -423,6 +458,12 @@ def tex_document(blocks, refs, figmap):
 %% Compile on Overleaf with pdfLaTeX; BibTeX runs automatically.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+%% fallbacks so a stray Unicode dash or space cannot stop the compile (and leave citations undefined)
+\DeclareUnicodeCharacter{2010}{-}
+\DeclareUnicodeCharacter{2011}{-}
+\DeclareUnicodeCharacter{2012}{-}
+\DeclareUnicodeCharacter{202F}{\,}
+\DeclareUnicodeCharacter{2009}{\,}
 \usepackage{textcomp}
 \usepackage{newtxtext,newtxmath}
 \usepackage[a4paper,left=1.25in,right=1in,top=1in,bottom=1in]{geometry}
@@ -725,6 +766,32 @@ def collect_citations(blocks, refs):
     return list(dict.fromkeys(keys))
 
 
+OVERLEAF_MAX_PX = 2000  # ~350 dpi at full text width (6 in); the 300-dpi matplotlib PNGs are up to 3600 px
+
+
+def copy_for_overleaf(src, dst):
+    """Copy a figure in a form pdfTeX can embed without re-encoding.
+
+    pdfTeX copies an 8-bit RGB/grey, non-interlaced PNG straight into the PDF, but an RGBA PNG (matplotlib's
+    default) must be decompressed, split into image + soft mask and recompressed on every run; with ~20
+    large figures that pushes the Overleaf compile past its time limit. Flatten onto white and cap the width.
+    """
+    if src.suffix.lower() != ".png":
+        shutil.copy2(src, dst)
+        return
+    with Image.open(src) as im:
+        if im.mode in ("RGBA", "LA", "P"):
+            im = im.convert("RGBA")
+            flat = Image.new("RGB", im.size, "white")
+            flat.paste(im, mask=im.getchannel("A"))
+            im = flat
+        elif im.mode not in ("RGB", "L"):
+            im = im.convert("RGB")
+        if im.width > OVERLEAF_MAX_PX:
+            im = im.resize((OVERLEAF_MAX_PX, round(im.height * OVERLEAF_MAX_PX / im.width)), Image.LANCZOS)
+        im.save(dst, "PNG", optimize=True, dpi=(300, 300))
+
+
 def find_figure(name):
     for d in FIG_SEARCH:
         if (d / name).exists():
@@ -763,11 +830,11 @@ def main():
         if b["t"] == "fig":
             src = find_figure(b["file"])
             dst_name = f"fig{b['num']:02d}_{src.stem}{src.suffix}"
-            shutil.copy2(src, OVERLEAF / "figures" / dst_name)
+            copy_for_overleaf(src, OVERLEAF / "figures" / dst_name)
             shutil.copy2(src, FIG_OUT / dst_name)
             figmap[b["label"]] = OVERLEAF / "figures" / dst_name
             captions.append(f"- **Figure {b['num']}** (`{dst_name}`, source `{src.relative_to(ROOT).as_posix()}`): {plain(b['caption'], refs, labels)}")
-    shutil.copy2(SRC / "assets" / "ku_logo.png", OVERLEAF / "figures" / "ku_logo.png")
+    copy_for_overleaf(SRC / "assets" / "ku_logo.png", OVERLEAF / "figures" / "ku_logo.png")
     (FIG_OUT / "CAPTIONS.md").write_text("\n".join(captions) + "\n", encoding="utf-8")
 
     tex = tex_document(blocks, refs, figmap)
